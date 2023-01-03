@@ -13,7 +13,7 @@ function myFunction() {
   }
   nestedFunction();
 }
-//myFunction();
+myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
 
@@ -91,13 +91,14 @@ const zooAnimals = [
 
   function lowerCaseNames(zooAnimals){
 
-  const array = [`jackal, asiatic`, `screamer, southern`, `white spoonbill`, `white-cheeked pintail`, `black-backed jackal`, `brolga crane`, `common melba finch`, `pampa gray fox`, `hawk-eagle, crowned`, `australian pelican crowned`]; 
-  
-  const lower = arr.map(element => {
-    return element.toLowerCase();
+    
+   const lower = zooAnimals.map(element => {
+    return element.animal_name.toLowerCase();
+    
   });
-
-  console.log(lower);
+  return lower;
+  }
+  console.log(lowerCaseNames(zooAnimals));
   
    
   
@@ -112,12 +113,10 @@ const zooAnimals = [
   */
 
   function lowPopulationAnimals(zooAnimals){
-    const population = animal.filter(
-      (animal) => animal.population < 5
-    );
-    return animal.population; 
+    const population = zooAnimals.filter(animal => animal.population < 5);
+    return population; 
   }
-  console.log(filter);
+ 
 
   
 
@@ -131,10 +130,12 @@ const zooAnimals = [
   */
 
   function USApop(zooAnimals){
-    const totalPop = animal.reduce((p, c) => {
-
-    })
-  }
+    const totalPop = zooAnimals.reduce((accumulator, currentValue) => accumulator + currentValue.population,
+    0)
+    return totalPop;
+    
+ }
+ console.log(USApop(zooAnimals));
   
   
   // 🦁🦁🦁 Callbacks 🦁🦁🦁  
@@ -279,5 +280,4 @@ class CuboidMakerTwo{
     multiply,
     greeting,
     CuboidMaker,
-    CuboidMakerTwo
   }
